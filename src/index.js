@@ -10,7 +10,7 @@ const menuItems = [
       "Fresh wheat noodles served in a flavorful broth, topped with succulent slices of tender pork, seaweed, and garnished with green onions.",
     price: 980,
     isSoldOut: false,
-    photoName: "/menu/ramen.jpg",
+    photoName: "menu/ramen.jpg",
   },
   {
     name: "Gyoza",
@@ -19,7 +19,7 @@ const menuItems = [
       "Delicate dumplings filled with a savory mixture of ground pork, finely chopped cabbage, minced garlic, ginger, and seasoned with soy sauce.",
     price: 380,
     isSoldOut: false,
-    photoName: "/menu/gyoza.jpg",
+    photoName: "menu/gyoza.jpg",
   },
   {
     name: "Tempura",
@@ -28,7 +28,7 @@ const menuItems = [
       "Lightly battered and deep-fried shrimp, along with an assortment of fresh vegetables such as sweet potato, zucchini, and eggplant, served with a traditional dipping sauce.",
     price: 680,
     isSoldOut: false,
-    photoName: "/menu/tempura.png",
+    photoName: "menu/tempura.png",
   },
   {
     name: "Sashimi",
@@ -37,7 +37,7 @@ const menuItems = [
       "Fresh slices of raw fish including tuna, salmon, and yellowtail, expertly prepared to showcase the natural flavors and textures of the seafood.",
     price: 1280,
     isSoldOut: false,
-    photoName: "/menu/sashimi.jpg",
+    photoName: "menu/sashimi.jpg",
   },
   {
     name: "Teriyaki Chicken",
@@ -46,7 +46,7 @@ const menuItems = [
       "Tender chicken pieces marinated in a sweet and savory teriyaki sauce, garnished with sesame seeds and green onions.",
     price: 580,
     isSoldOut: true,
-    photoName: "/menu/teriyaki-chicken.jpg",
+    photoName: "menu/teriyaki-chicken.jpg",
   },
   {
     name: "Katsu Curry",
@@ -55,7 +55,7 @@ const menuItems = [
       "Crispy breaded cutlet (chicken or pork) served with aromatic Japanese curry, steamed rice, and pickled vegetables.",
     price: 650,
     isSoldOut: false,
-    photoName: "/menu/katsu-curry.jpg",
+    photoName: "menu/katsu-curry.jpg",
   },
 ];
 
