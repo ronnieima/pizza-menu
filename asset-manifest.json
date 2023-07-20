@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sakura-japanese-kitchen/static/css/main.a1a9dcfa.css",
+    "main.js": "/sakura-japanese-kitchen/static/js/main.a9b175e7.js",
+    "index.html": "/sakura-japanese-kitchen/index.html",
+    "main.a1a9dcfa.css.map": "/sakura-japanese-kitchen/static/css/main.a1a9dcfa.css.map",
+    "main.a9b175e7.js.map": "/sakura-japanese-kitchen/static/js/main.a9b175e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1a9dcfa.css",
+    "static/js/main.a9b175e7.js"
+  ]
+}
