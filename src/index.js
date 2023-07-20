@@ -5,6 +5,7 @@ import "./index.css";
 const menuItems = [
   {
     name: "Ramen",
+    japaneseName: "ラーメン",
     ingredients:
       "Fresh wheat noodles served in a flavorful broth, topped with succulent slices of tender pork, seaweed, and garnished with green onions.",
     price: 980,
@@ -13,6 +14,7 @@ const menuItems = [
   },
   {
     name: "Gyoza",
+    japaneseName: "餃子",
     ingredients:
       "Delicate dumplings filled with a savory mixture of ground pork, finely chopped cabbage, minced garlic, ginger, and seasoned with soy sauce.",
     price: 380,
@@ -21,6 +23,7 @@ const menuItems = [
   },
   {
     name: "Tempura",
+    japaneseName: "天ぷら",
     ingredients:
       "Lightly battered and deep-fried shrimp, along with an assortment of fresh vegetables such as sweet potato, zucchini, and eggplant, served with a traditional dipping sauce.",
     price: 680,
@@ -29,6 +32,7 @@ const menuItems = [
   },
   {
     name: "Sashimi",
+    japaneseName: "刺身",
     ingredients:
       "Fresh slices of raw fish including tuna, salmon, and yellowtail, expertly prepared to showcase the natural flavors and textures of the seafood.",
     price: 1280,
@@ -37,6 +41,7 @@ const menuItems = [
   },
   {
     name: "Teriyaki Chicken",
+    japaneseName: "鶏の照り焼き",
     ingredients:
       "Tender chicken pieces marinated in a sweet and savory teriyaki sauce, garnished with sesame seeds and green onions.",
     price: 580,
@@ -45,6 +50,7 @@ const menuItems = [
   },
   {
     name: "Katsu Curry",
+    japaneseName: "カツカレー",
     ingredients:
       "Crispy breaded cutlet (chicken or pork) served with aromatic Japanese curry, steamed rice, and pickled vegetables.",
     price: 650,
@@ -109,6 +115,7 @@ function MenuItem({ menuItemObj }) {
       <img src={menuItemObj.photoName} alt={menuItemObj.name} />
       <div>
         <h3>{menuItemObj.name}</h3>
+        <h4>{menuItemObj.japaneseName}</h4>
         <p>{menuItemObj.ingredients}</p>
 
         <span>

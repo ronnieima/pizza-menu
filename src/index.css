@@ -57,7 +57,7 @@ body {
   display: block;
   content: "";
   height: 3px;
-  width: 15rem;
+  width: 30rem;
   background-color: #ff92c4;
   position: absolute;
   top: calc(50% - 1px);
@@ -107,6 +107,7 @@ body {
 
 .item {
   display: flex;
+  flex-direction: column;
   gap: 3.2rem;
 }
 
@@ -126,6 +127,11 @@ body {
 .item h3 {
   font-size: 2rem;
   font-weight: 400;
+}
+
+.item h4 {
+  font-size: 1.5rem;
+  font-weight: 350;
 }
 
 .item p {
@@ -178,10 +184,35 @@ body {
   background-color: #e9bb24;
 }
 
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+@media (max-width: 1020px) {
+  .items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+  }
+  .items {
+    margin: 0 15rem;
+  }
 
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/
+  .item img {
+    align-self: center;
+  }
+
+  .item div {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item div p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 595px) {
+  .header h1::before,
+  .header h1::after {
+    display: none;
+  }
+}
+/* SPACING SYSTEM (px) 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128 FONT SIZE SYSTEM (px) 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98 */
