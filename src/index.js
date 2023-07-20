@@ -67,7 +67,9 @@ function Header() {
   return (
     <header className="header">
       <h1>
-        Hana Japanese <br></br>Kitchen
+        Sakura Japanese
+        <br />
+        Kitchen
       </h1>
     </header>
   );
