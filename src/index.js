@@ -2,48 +2,54 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-const pizzaData = [
+const menuItems = [
   {
-    name: "Focaccia",
-    ingredients: "Bread with italian olive oil and rosemary",
-    price: 6,
-    photoName: "pizzas/focaccia.jpg",
-    soldOut: false,
+    name: "Ramen",
+    ingredients:
+      "Fresh wheat noodles served in a flavorful broth, topped with succulent slices of tender pork, seaweed, and garnished with green onions.",
+    price: 980,
+    isSoldOut: false,
+    photoName: "/menu/ramen.jpg",
   },
   {
-    name: "Pizza Margherita",
-    ingredients: "Tomato and mozarella",
-    price: 10,
-    photoName: "pizzas/margherita.jpg",
-    soldOut: false,
+    name: "Gyoza",
+    ingredients:
+      "Delicate dumplings filled with a savory mixture of ground pork, finely chopped cabbage, minced garlic, ginger, and seasoned with soy sauce.",
+    price: 380,
+    isSoldOut: false,
+    photoName: "",
   },
   {
-    name: "Pizza Spinaci",
-    ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
-    price: 12,
-    photoName: "pizzas/spinaci.jpg",
-    soldOut: false,
+    name: "Tempura",
+    ingredients:
+      "Lightly battered and deep-fried shrimp, along with an assortment of fresh vegetables such as sweet potato, zucchini, and eggplant, served with a traditional dipping sauce.",
+    price: 680,
+    isSoldOut: false,
+    photoName: "",
   },
   {
-    name: "Pizza Funghi",
-    ingredients: "Tomato, mozarella, mushrooms, and onion",
-    price: 12,
-    photoName: "pizzas/funghi.jpg",
-    soldOut: false,
+    name: "Sashimi",
+    ingredients:
+      "Fresh slices of raw fish including tuna, salmon, and yellowtail, expertly prepared to showcase the natural flavors and textures of the seafood.",
+    price: 1280,
+    isSoldOut: false,
+    photoName: "",
   },
   {
-    name: "Pizza Salamino",
-    ingredients: "Tomato, mozarella, and pepperoni",
-    price: 15,
-    photoName: "pizzas/salamino.jpg",
-    soldOut: true,
+    name: "Teriyaki Chicken",
+    ingredients:
+      "Tender chicken pieces marinated in a sweet and savory teriyaki sauce, garnished with sesame seeds and green onions.",
+    price: 580,
+    isSoldOut: true,
+    photoName: "",
   },
   {
-    name: "Pizza Prosciutto",
-    ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
-    price: 18,
-    photoName: "pizzas/prosciutto.jpg",
-    soldOut: false,
+    name: "Katsu Curry",
+    ingredients:
+      "Crispy breaded cutlet (chicken or pork) served with aromatic Japanese curry, steamed rice, and pickled vegetables.",
+    price: 650,
+    isSoldOut: false,
+    photoName: "",
   },
 ];
 
@@ -66,22 +72,23 @@ function Header() {
 }
 
 function Menu() {
-  const pizzas = pizzaData;
-  const numPizzas = pizzas.length;
+  const items = menuItems;
+  const numItems = items.length;
 
   return (
     <main className="menu">
       <h2>Our menu</h2>
 
-      {numPizzas > 0 ? (
+      {numItems > 0 ? (
         <>
           <p>
-            Authentic Italian cuisine. 6 creative dishes to choose from. All
-            from our stone oven, all organic, and delicious.
+            Authentic Japanese cuisine. 6 creative dishes to choose from. All
+            prepared with precision, using traditional methods and fresh
+            ingredients.
           </p>
           <ul className="pizzas">
-            {pizzas.map((pizza) => (
-              <Pizza pizzaObj={pizza} key={pizza.name} />
+            {items.map((food) => (
+              <MenuItem menuItemObj={food} key={food.name} />
             ))}
           </ul>
         </>
@@ -92,15 +99,17 @@ function Menu() {
   );
 }
 
-function Pizza({ pizzaObj }) {
+function MenuItem({ menuItemObj }) {
   return (
-    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
-      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+    <li className={`pizza ${menuItemObj.soldOut ? "sold-out" : ""}`}>
+      <img src={menuItemObj.photoName} alt={menuItemObj.name} />
       <div>
-        <h3>{pizzaObj.name}</h3>
-        <p>{pizzaObj.ingredients}</p>
+        <h3>{menuItemObj.name}</h3>
+        <p>{menuItemObj.ingredients}</p>
 
-        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
+        <span>
+          {menuItemObj.soldOut ? "SOLD OUT" : `¥${menuItemObj.price}`}
+        </span>
       </div>
     </li>
   );
@@ -108,7 +117,7 @@ function Pizza({ pizzaObj }) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 8;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
