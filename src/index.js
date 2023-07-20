@@ -17,7 +17,7 @@ const menuItems = [
       "Delicate dumplings filled with a savory mixture of ground pork, finely chopped cabbage, minced garlic, ginger, and seasoned with soy sauce.",
     price: 380,
     isSoldOut: false,
-    photoName: "",
+    photoName: "/menu/gyoza.jpg",
   },
   {
     name: "Tempura",
@@ -25,7 +25,7 @@ const menuItems = [
       "Lightly battered and deep-fried shrimp, along with an assortment of fresh vegetables such as sweet potato, zucchini, and eggplant, served with a traditional dipping sauce.",
     price: 680,
     isSoldOut: false,
-    photoName: "",
+    photoName: "/menu/tempura.png",
   },
   {
     name: "Sashimi",
@@ -33,7 +33,7 @@ const menuItems = [
       "Fresh slices of raw fish including tuna, salmon, and yellowtail, expertly prepared to showcase the natural flavors and textures of the seafood.",
     price: 1280,
     isSoldOut: false,
-    photoName: "",
+    photoName: "/menu/sashimi.jpg",
   },
   {
     name: "Teriyaki Chicken",
@@ -41,7 +41,7 @@ const menuItems = [
       "Tender chicken pieces marinated in a sweet and savory teriyaki sauce, garnished with sesame seeds and green onions.",
     price: 580,
     isSoldOut: true,
-    photoName: "",
+    photoName: "/menu/teriyaki-chicken.jpg",
   },
   {
     name: "Katsu Curry",
@@ -49,7 +49,7 @@ const menuItems = [
       "Crispy breaded cutlet (chicken or pork) served with aromatic Japanese curry, steamed rice, and pickled vegetables.",
     price: 650,
     isSoldOut: false,
-    photoName: "",
+    photoName: "/menu/katsu-curry.jpg",
   },
 ];
 
@@ -66,7 +66,9 @@ function App() {
 function Header() {
   return (
     <header className="header">
-      <h1>Fast React Pizza Co.</h1>
+      <h1>
+        Hana Japanese <br></br>Kitchen
+      </h1>
     </header>
   );
 }
@@ -86,7 +88,7 @@ function Menu() {
             prepared with precision, using traditional methods and fresh
             ingredients.
           </p>
-          <ul className="pizzas">
+          <ul className="items">
             {items.map((food) => (
               <MenuItem menuItemObj={food} key={food.name} />
             ))}
@@ -101,14 +103,14 @@ function Menu() {
 
 function MenuItem({ menuItemObj }) {
   return (
-    <li className={`pizza ${menuItemObj.soldOut ? "sold-out" : ""}`}>
+    <li className={`item ${menuItemObj.isSoldOut ? "sold-out" : ""}`}>
       <img src={menuItemObj.photoName} alt={menuItemObj.name} />
       <div>
         <h3>{menuItemObj.name}</h3>
         <p>{menuItemObj.ingredients}</p>
 
         <span>
-          {menuItemObj.soldOut ? "SOLD OUT" : `¥${menuItemObj.price}`}
+          {menuItemObj.isSoldOut ? "SOLD OUT" : `¥${menuItemObj.price}`}
         </span>
       </div>
     </li>
@@ -117,7 +119,7 @@ function MenuItem({ menuItemObj }) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 8;
+  const openHour = 1;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
@@ -129,7 +131,7 @@ function Footer() {
       ) : (
         <p>
           We are closed. We're happy to welcome you between {openHour}:00 and{" "}
-          {closeHour}:00
+          {closeHour}:00!
         </p>
       )}
     </footer>
@@ -141,7 +143,7 @@ function Order({ closeHour, openHour }) {
     <div className="order">
       <p>
         We're open from {openHour}:00 to {closeHour}:00. Come visit us or order
-        online
+        online!
       </p>
       <button className="btn">Order</button>
     </div>
